@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="./assets/favico/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/tilt-effect.css">
+</head>
+<body>
+  <div id="terminal">
+    <div id="terminal-header">
+      <div id="terminal-buttons">
+
+        <div class="terminal-button" id="close-button"></div>
+        <div class="terminal-button" id="minimize-button"></div>
+        <div class="terminal-button" id="maximize-button"></div>
+      </div>
+    </div>
+    <div id="terminal-content">
+      <p id="terminal-text"></p>
+    </div>
+  </div>
+
+  <div id="video-background">
+    <video autoplay muted loop id="myVideo">
+      <source src="./assets/back/default.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div id="audio-background">
+      <audio autoplay loop id="myAudio">
+        <source src="./assets/music/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div id="video-overlay"></div>
+    <div id="blurred-box" class="tilt-element">
+      <div class="profile-picture-container">
+        <img id="profile-picture" src="./assets/pfp/default.jpg" alt="Profile Picture">
+        <div id="discord-sync-indicator" class="sync-indicator">
+          <i class="fab fa-discord"></i>
+        </div>
+      </div>
+      <img id="avatar-frame" src="" alt="Avatar Frame">
+      <p id="username-container" style="color: white; font-weight: bold; font-size: 32px;">
+        <span id="username">Wadu</span>
+        <span id="typing-cursor">|</span>
+      </p>
+      <div class="badges-container">
+        <img src="./assets/badge/nitro.png" alt="nitro badge">
+        <img src="./assets/badge/f9f14cb0-9829-4556-a144-94b0aa0d508a.webp" alt="nitro badge">
+        <img src="./assets/badge/1837-evolving-badge-nitro-24-months.png" alt="24month boost">
+        <img src="./assets/badge/completed-a-quest.png" alt="quest badge">
+        <img src="./assets/badge/discord.png" alt=" Early Supporter Badge">
+        <img src="./assets/badge/Discord_Partner_Server_Owner_Badge.png" alt="Partnered Server Owner Badge">
+        <img src="./assets/badge/active-developer.png" alt="dev badge">
+      </div>
+              <div class="music-controls">
+          <button id="randomBtn" class="music-btn">
+            <i class="fas fa-random"></i>
+          </button>
+          
+          <button id="playPauseBtn" class="music-btn">
+            <i class="fas fa-pause"></i>
+          </button>
+          
+          <button id="muteBtn" class="music-btn">
+            <i class="fas fa-volume-up"></i>
+          </button>
+          
+          <div class="volume-container">
+            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
+          </div>
+        </div>
+      <div class="user-description">
+        <p id="user-description" style="color: white;">
+          I'm Wadudangcap, and I'm a technical consultant at VietDynasty.<br>4 years C++ experience<br>3 years java experience
+        </p>
+      </div>
+
+      <div class="discord-widget">
+        <div class="discord-content">
+          <div class="discord-icon">
+            <img id="discord-avatar" src="" alt="Discord Avatar" draggable="false" loading="lazy">
+          </div>
+          <div class="discord-meta">
+            <b id="discord-username"></b>
+            <div>
+              <span id="discord-status-dot"></span>
+              <span id="discord-status-text"></span>
+            </div>
+          </div>
+        </div>
+        <div class="discord-activity">
+          <div id="discord-activity-info">
+            <div id="discord-album-art"></div>
+            <div class="discord-activity-content">
+              <div id="discord-activity-name"></div>
+              <div id="discord-activity-details"></div>
+              <div id="discord-activity-state"></div>
+            </div>
+          </div>
+          <div id="discord-no-activity">I'm not currently doing anything!</div>
+        </div>
+      </div>
+
+      <div class="links">
+        <a href="https://discord.com/users/931156175850967050" target="_blank">
+          <i class="fab fa-discord"></i>
+        </a> 
+        <a href="https://xnxx.com" target="_blank">
+          <i class="fas fa-globe"></i> 
+        </a> 
+        <a href="https://steamcommunity.com/profiles/76561199514602763/" target="_blank">
+          <i class="fa-brands fa-steam"></i>
+        </a> 
+        <a href="https://www.tiktok.com/@ha1anhex1" target="_blank">
+          <i class="fa-brands fa-tiktok"></i>
+        </a> 
+      </div>
+    </div>
+  </div>
+  
+  <script src="./assets/js/error-handler.js"></script>
+  <script src="./assets/js/console.js"></script>
+  <script src="./assets/js/lanyard.js"></script>
+  <script src="./assets/js/discord.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/title.js"></script>
+  <script src="./assets/js/username-animation.js"></script>
+  <script src="./assets/js/tilt-effect.js"></script>
+  <script src="./assets/js/music-control.js"></script>
+</body>
+</html>
