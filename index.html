@@ -148,3 +148,89 @@
   <script src="./assets/js/music-control.js"></script>
 </body>
 </html>
+<script>
+  
+  </script>
+    <script>
+      // Chỉ áp dụng các biện pháp bảo vệ trên desktop
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.addEventListener("keydown", function (e) {
+          // Chặn Ctrl + S (Save)
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+            e.preventDefault();
+            alert("Hết cách rồi hẹ hẹ hẹ");
+          }
+      
+          // Các tổ hợp phím khác
+          if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && ["I", "C", "J","S"].includes(e.key)) ||
+            (e.ctrlKey && e.key.toLowerCase() === "u")
+          ) {
+            e.preventDefault();
+            alert("Soi Cái Lồn àk");
+          }
+        });
+      
+        // Chặn chuột phải chỉ trên desktop
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+      
+        // Kiểm tra DevTools chỉ trên desktop
+        (function () {
+          let threshold = 160;
+          setInterval(function () {
+            if (window.outerHeight - window.innerHeight > threshold) {
+              alert("Tắt DevTools đi thg ngu");
+              window.location.href = "about:blank";
+            }
+          }, 1000);
+        })();
+      }
+        
+      const blurOverlay = document.getElementById("blur-overlay");
+    
+      window.addEventListener("blur", () => {
+        blurOverlay.style.opacity = 1;
+      });
+    
+      window.addEventListener("focus", () => {
+        blurOverlay.style.opacity = 0;
+      });
+      </script>
+    
+      <script>
+      function updateClock() {
+        const now = new Date();
+    
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // 0h => 12h
+    
+        const hoursStr = String(hours).padStart(2, '0');
+    
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+    
+        const formattedTime = `${hoursStr}:${minutes}:${seconds} ${ampm} | ${day}/${month}/${year}`;
+        document.getElementById("clock").textContent = formattedTime;
+      }
+    
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+
+
+
+  
+  <div id="ip-info-container" style="color:white; position:fixed; bottom:10px; right:10px; background:rgba(0,0,0,0.5); padding:10px; border-radius:8px; font-size:14px;"></div>
+  
+  
+  </body>
+  </html>
